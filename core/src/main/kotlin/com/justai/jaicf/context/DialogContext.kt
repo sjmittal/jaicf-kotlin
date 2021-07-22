@@ -2,13 +2,13 @@ package com.justai.jaicf.context
 
 import com.justai.jaicf.model.scenario.ScenarioModel
 import java.io.Serializable
-import java.util.ArrayDeque
+import java.util.*
 
 /**
  * Contains all data regarding the current state of the dialogue.
  * Please be careful and edit this class variables values only if you clearly understand what you do.
  */
-class DialogContext: Serializable {
+class DialogContext : Serializable {
 
     var nextContext: String? = null
     var currentContext: String = "/"
@@ -36,5 +36,9 @@ class DialogContext: Serializable {
         }
 
         return currentContext
+    }
+
+    override fun toString(): String {
+        return "DialogContext(nextContext=$nextContext, currentContext='$currentContext', nextState=$nextState, currentState='$currentState', transitions=$transitions, backStateStack=$backStateStack)"
     }
 }
