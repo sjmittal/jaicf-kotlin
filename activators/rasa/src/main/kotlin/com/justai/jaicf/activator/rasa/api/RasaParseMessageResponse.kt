@@ -17,7 +17,7 @@ data class RasaParseMessageResponse(
 data class Entity(
     val start: Int,
     val end: Int,
-    val confidence: Float,
+    val confidence_entity: Float,
     val value: String,
     val entity: String
 )
